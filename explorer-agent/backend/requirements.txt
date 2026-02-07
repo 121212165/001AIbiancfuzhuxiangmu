@@ -1,0 +1,51 @@
+# Core
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Database
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+alembic==1.13.0
+pgvector==0.2.4
+
+# Task Queue
+celery==5.3.4
+redis==5.0.1
+
+# AI/ML
+anthropic==0.7.8
+openai==1.3.7
+sentence-transformers==2.2.2
+
+# v2.0 - Knowledge Processing
+umap-learn==0.5.5
+hdbscan==0.8.33
+networkx==3.2.1
+pyvis==0.3.2
+scikit-learn==1.3.2
+numpy==1.24.3
+jieba==0.42.1
+spacy==3.7.2
+
+# v2.0 - Report Generation
+jinja2==3.1.2
+
+# Data Sources
+requests==2.31.0
+feedparser==6.0.10
+beautifulsoup4==4.12.2
+google-api-python-client==2.108.0
+arxiv==2.1.0
+duckduckgo-search==4.1.1
+
+# Utils
+python-dotenv==1.0.0
+httpx==0.25.2
+tenacity==8.2.3
+
+# Frontend
+streamlit==1.29.0
+plotly==5.18.0
+pandas==2.1.4

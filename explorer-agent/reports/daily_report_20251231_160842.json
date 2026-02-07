@@ -1,0 +1,69 @@
+{
+  "report_date": "2025-12-31T16:08:42.831433",
+  "summary": {
+    "total_nodes": 37,
+    "new_nodes_today": 0,
+    "total_paths": 17,
+    "frontier_seeds": 203,
+    "avg_value_score": 0.7513513513513517
+  },
+  "quality_distribution": {
+    "high_value (≥0.7)": 32,
+    "medium_value (0.5-0.7)": 5,
+    "low_value (<0.5)": 0
+  },
+  "source_distribution": {
+    "http://arxiv.org/abs/2512.22115v1": 1,
+    "http://arxiv.org/abs/2512.22120v1": 1,
+    "http://arxiv.org/abs/2512.21985v1": 1,
+    "http://arxiv.org/abs/2512.22016v1": 1,
+    "http://arxiv.org/abs/2512.22036v1": 1,
+    "http://arxiv.org/abs/2512.22112v1": 1,
+    "http://arxiv.org/abs/2512.22117v1": 1,
+    "http://arxiv.org/abs/2512.22045v1": 1,
+    "http://arxiv.org/abs/2512.22109v1": 1,
+    "http://arxiv.org/abs/2512.22110v1": 1,
+    "http://arxiv.org/abs/2512.22111v1": 1,
+    "http://arxiv.org/abs/2512.22116v1": 1,
+    "http://arxiv.org/abs/2512.22113v1": 1,
+    "http://arxiv.org/abs/2512.22119v1": 1,
+    "http://arxiv.org/abs/2512.22121v1": 1,
+    "http://arxiv.org/abs/2512.21296v1": 1,
+    "http://arxiv.org/abs/2512.21301v1": 1,
+    "http://arxiv.org/abs/2512.21293v1": 1,
+    "http://arxiv.org/abs/2512.21314v1": 1,
+    "http://arxiv.org/abs/2512.21316v1": 1,
+    "http://arxiv.org/abs/2512.21320v1": 1,
+    "http://arxiv.org/abs/2512.21291v1": 1,
+    "http://arxiv.org/abs/2512.21309v1": 1,
+    "http://arxiv.org/abs/2512.21311v1": 1,
+    "http://arxiv.org/abs/2512.21337v1": 1,
+    "http://arxiv.org/abs/2512.21323v1": 1,
+    "http://arxiv.org/abs/2512.21326v1": 1,
+    "http://arxiv.org/abs/2512.21324v1": 1,
+    "http://arxiv.org/abs/2512.21329v1": 1,
+    "http://arxiv.org/abs/2512.21319v1": 1,
+    "http://arxiv.org/abs/2512.21325v1": 1,
+    "http://arxiv.org/abs/2512.21331v1": 1,
+    "http://arxiv.org/abs/2512.21334v1": 1,
+    "http://arxiv.org/abs/2512.21333v1": 1,
+    "http://arxiv.org/abs/2512.21335v1": 1,
+    "http://arxiv.org/abs/2512.21336v1": 1,
+    "http://arxiv.org/abs/2512.21328v1": 1
+  },
+  "new_nodes": [],
+  "exploration_stats": {
+    "rounds_completed": 3,
+    "total_time": 15.191083908081055,
+    "errors": []
+  },
+  "thinker_stats": {
+    "low_quality_pool_size": 5,
+    "low_quality_unprocessed": 0,
+    "total_insights": 5,
+    "thinking_sessions": 5,
+    "avg_insight_value": 0.45999999999999996,
+    "thinking_time": 0,
+    "insights_created_today": 0
+  }
+}

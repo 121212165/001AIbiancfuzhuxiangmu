@@ -1,0 +1,16 @@
+{
+  "name": "pdf-to-markdown-converter",
+  "version": "1.0.0",
+  "description": "将PDF文件转换为Markdown格式",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "pdf-parse": "^1.1.1",
+    "fs-extra": "^11.1.1",
+    "commander": "^11.0.0",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1"
+  }
+}

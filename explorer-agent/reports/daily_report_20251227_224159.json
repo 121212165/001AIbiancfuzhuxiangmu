@@ -1,0 +1,28 @@
+{
+  "report_date": "2025-12-27T22:41:59.014917",
+  "summary": {
+    "total_nodes": 5,
+    "new_nodes_today": 0,
+    "total_paths": 11,
+    "frontier_seeds": 122,
+    "avg_value_score": 0.8
+  },
+  "quality_distribution": {
+    "high_value (≥0.7)": 5,
+    "medium_value (0.5-0.7)": 0,
+    "low_value (<0.5)": 0
+  },
+  "source_distribution": {
+    "http://arxiv.org/abs/2512.21334v1": 1,
+    "http://arxiv.org/abs/2512.21333v1": 1,
+    "http://arxiv.org/abs/2512.21335v1": 1,
+    "http://arxiv.org/abs/2512.21336v1": 1,
+    "http://arxiv.org/abs/2512.21328v1": 1
+  },
+  "new_nodes": [],
+  "exploration_stats": {
+    "rounds_completed": 3,
+    "total_time": 15.12937331199646,
+    "errors": []
+  }
+}

@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  # 开发环境
+  bio-sim-dev:
+    build: .
+    container_name: bio-sim-dev
+    volumes:
+      - .:/app
+      - bio-sim-data:/app/data
+    environment:
+      - DISPLAY=host.docker.internal:0
+      - PYTHONUNBUFFERED=1
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+
+  # 测试环境
+  bio-sim-test:
+    build: .
+    container_name: bio-sim-test
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: pytest tests/ -v --cov=bio_sim --cov-report=term --cov-report=html
+
+  # 运行Boids模拟
+  boids:
+    build: .
+    container_name: bio-sim-boids
+    volumes:
+      - .:/app
+      - bio-sim-data:/app/data
+    environment:
+      - DISPLAY=host.docker.internal:0
+    command: python -m visualizers.pygame_visualizer boids
+
+  # 运行生态系统模拟
+  ecosystem:
+    build: .
+    container_name: bio-sim-ecosystem
+    volumes:
+      - .:/app
+      - bio-sim-data:/app/data
+    environment:
+      - DISPLAY=host.docker.internal:0
+    command: python -m visualizers.pygame_visualizer ecosystem
+
+  # 运行生命游戏
+  game-of-life:
+    build: .
+    container_name: bio-sim-life
+    volumes:
+      - .:/app
+      - bio-sim-data:/app/data
+    environment:
+      - DISPLAY=host.docker.internal:0
+    command: python -m visualizers.pygame_visualizer life
+
+  # 运行遗传算法
+  genetic:
+    build: .
+    container_name: bio-sim-genetic
+    volumes:
+      - .:/app
+      - bio-sim-data:/app/data
+    environment:
+      - DISPLAY=host.docker.internal:0
+    command: python -m visualizers.pygame_visualizer genetic
+
+volumes:
+  bio-sim-data:
+    driver: local

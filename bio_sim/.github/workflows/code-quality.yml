@@ -1,0 +1,110 @@
+name: Code Quality
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly
+
+jobs:
+  complexity:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install radon mccabe
+
+    - name: Check complexity
+      run: |
+        radon cc core/ simulations/ -a -nb
+        radon mi core/ simulations/ -nb
+
+  security:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install safety bandit
+
+    - name: Check for security issues
+      run: |
+        safety check --full-report || true
+        bandit -r core/ simulations/ -f json || true
+
+  documentation:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install sphinx sphinx-rtd-theme
+
+    - name: Check documentation
+      run: |
+        # Check if all modules have docstrings
+        python -c "
+        import ast
+    import sys
+
+    def has_docstring(node):
+        return ast.get_docstring(node) is not None
+
+    def check_file(filepath):
+        with open(filepath, 'r') as f:
+            tree = ast.parse(f.read(), filepath)
+
+        issues = []
+        for node in ast.walk(tree):
+            if isinstance(node, (ast.FunctionDef, ast.ClassDef)):
+                if not has_docstring(node):
+                    if not node.name.startswith('_'):  # Skip private
+                        issues.append(f'{filepath}:{node.lineno} - {node.name}')
+
+        return issues
+
+    import os
+    issues = []
+    for root, dirs, files in os.walk('.'):
+        for file in files:
+            if file.endswith('.py'):
+                filepath = os.path.join(root, file)
+                if 'tests' not in filepath:  # Skip test files
+                    issues.extend(check_file(filepath))
+
+    if issues:
+        print('Missing docstrings:')
+        for issue in issues[:10]:  # Show first 10
+            print(f'  {issue}')
+        sys.exit(1)
+    " || true  # Don't fail for now

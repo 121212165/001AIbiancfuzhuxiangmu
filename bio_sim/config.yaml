@@ -1,0 +1,43 @@
+# Bio-Sim Configuration File
+
+simulation:
+  # Default window size
+  width: 800
+  height: 600
+
+  # Frame rate
+  fps: 60
+
+# Boids simulation settings
+boids:
+  num_boids: 150
+  alignment_weight: 1.0
+  cohesion_weight: 1.0
+  separation_weight: 1.5
+  perception_radius: 50
+
+# Ecosystem simulation settings
+ecosystem:
+  initial_prey: 80
+  initial_predators: 15
+  grass_growth_rate: 0.15
+
+# Game of Life settings
+game_of_life:
+  grid_width: 100
+  grid_height: 75
+  density: 0.3
+  wrap_around: true
+
+# Genetic algorithm settings
+genetic:
+  population_size: 100
+  dna_length: 100
+  mutation_rate: 0.01
+  target_type: pattern  # random, pattern, zeros
+
+# Logging settings
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: null  # Set to a file path to enable file logging
+  format: "[%(asctime)s] [%(name)s] [%(levelname)s] %(message)s"
